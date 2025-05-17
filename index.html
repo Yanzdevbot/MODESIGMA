@@ -1,9 +1,10 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yanzdev | Web Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <style>
     .karaoke-line {
       display: none;
@@ -17,6 +18,8 @@
   </style>
 </head>
 <body class="bg-gray-900 text-white">
+
+  <!-- Header -->
   <header class="bg-gray-800 p-4 fixed w-full z-10 top-0 shadow">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold">Yanzdev</h1>
@@ -26,31 +29,53 @@
         <a href="#contact" class="hover:text-teal-400">Kontak</a>
       </nav>
     </div>
-  </header>  <section class="h-screen flex items-center justify-center pt-20" id="home">
-    <div class="text-center">
+  </header>
+
+  <!-- Hero Section dengan Video -->
+  <section class="h-screen flex items-center justify-center pt-20 relative overflow-hidden" id="home">
+    <!-- Background Video -->
+    <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
+      <source src="videos/background.mp4" type="video/mp4" />
+      Browser Anda tidak mendukung video background.
+    </video>
+
+    <!-- Konten Profil -->
+    <div class="text-center relative z-10">
       <img src="images/profile.jpg" alt="Foto Yanzdev" class="w-40 h-40 object-cover mx-auto rounded-full mb-4 border-4 border-teal-500">
       <h2 class="text-4xl font-bold">Halo, Saya Yanzdev</h2>
-      <p class="text-gray-400 text-xl mt-2">Kamu Just Kidding, Aku Galau Cuman Akting🥶</p>
+      <p class="text-gray-200 text-xl mt-2 bg-gray-900 bg-opacity-50 inline-block px-4 py-2 rounded">Kamu Just Kidding, Aku Galau Cuman Akting🥶</p>
     </div>
-  </section>  <section id="about" class="py-20 px-6 bg-gray-800">
+  </section>
+
+  <!-- Tentang -->
+  <section id="about" class="py-20 px-6 bg-gray-800">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Tentang Saya</h2>
-      <p class="text-gray-300">saya adalah seseorang sigam skibidi yang belajar html,css,dan saya juga sedikit bosen kaya gini mulu kalo punya saran hub lewat email aja wa gw modar</p>
+      <p class="text-gray-300">saya adalah seseorang sigam skibidi yang belajar html, css, dan saya juga sedikit bosen kaya gini mulu. kalo punya saran hubungi lewat email aja, wa gw modar.</p>
     </div>
-  </section>  <section id="projects" class="py-20 px-6">
+  </section>
+
+  <!-- Proyek GitHub -->
+  <section id="projects" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Proyek GitHub</h2>
       <div id="repo-list" class="grid md:grid-cols-3 gap-8">
         <p class="text-gray-400">Loading repositori...</p>
       </div>
     </div>
-  </section>  <section id="contact" class="py-20 px-6 bg-gray-800">
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="py-20 px-6 bg-gray-800">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Kontak</h2>
       <p class="text-gray-300">Hubungi saya di:</p>
       <a href="mailto:ihwanparabon@gmail.com" class="text-teal-400 underline">ihwanparabon@gmail.com</a>
     </div>
-  </section>  <section id="music" class="py-12 px-6 text-center bg-gray-900">
+  </section>
+
+  <!-- Lagu dan Lirik -->
+  <section id="music" class="py-12 px-6 text-center bg-gray-900">
     <h2 class="text-2xl font-bold mb-4">Dengarkan Lagu</h2>
     <audio id="audio" controls class="mx-auto">
       <source src="music/sample.mp3" type="audio/mpeg">
@@ -61,33 +86,39 @@
       <div class="karaoke-line" data-time="17">Aku kan selalu disini</div>
       <div class="karaoke-line" data-time="25">mengapa oh mengapa dirimu</div>
       <div class="karaoke-line" data-time="31">penuh rasa bimbang</div>
-      <div class="karaoke-line" data-time="38">   Tak perlu Kau pergi tuk mencari</div>
-      <div class="karaoke-line" data-time="44"> Mancari arti cinta</div>
+      <div class="karaoke-line" data-time="38">Tak perlu Kau pergi tuk mencari</div>
+      <div class="karaoke-line" data-time="44">Mancari arti cinta</div>
       <div class="karaoke-line" data-time="50">aku sendiri disini menunggu</div>
       <div class="karaoke-line" data-time="55">aku sendiri disini menanti</div>
-      <div class="karaoke-line" data-time="57"> aku tak terbiasa berharap</div>
+      <div class="karaoke-line" data-time="57">aku tak terbiasa berharap</div>
       <div class="karaoke-line" data-time="64">berlari untuk mengejar dirimu</div>
       <div class="karaoke-line" data-time="82">dalam menggapi semua impiku</div>
-      <div class="karaoke-line" data-time="90"> S'moga kau kan tetap jadi apa yang ku inginkan</div>
+      <div class="karaoke-line" data-time="90">S'moga kau kan tetap jadi apa yang ku inginkan</div>
       <div class="karaoke-line" data-time="104">mengapa oh mengapa dirimu</div>
       <div class="karaoke-line" data-time="111">penuh rasa bimbang</div>
-      <div class="karaoke-line" data-time="118">   tak perlu pergi tuk mencari</div>
-      <div class="karaoke-line" data-time="125"> mencari arti cintaaa</div>
+      <div class="karaoke-line" data-time="118">tak perlu pergi tuk mencari</div>
+      <div class="karaoke-line" data-time="125">mencari arti cintaaa</div>
       <div class="karaoke-line" data-time="132">aku sendiri disini mengunggu</div>
-      <div class="karaoke-line" data-time="139"> aku sendiri disini menanti</div>
-      <div class="karaoke-line" data-time="146"> aku tak terbiasa untuk berharap</div>
+      <div class="karaoke-line" data-time="139">aku sendiri disini menanti</div>
+      <div class="karaoke-line" data-time="146">aku tak terbiasa untuk berharap</div>
       <div class="karaoke-line" data-time="153">berlari untuk mengejar dirimu</div>
       <div class="karaoke-line" data-time="160">menggapi semua impiku</div>
-      <div class="karaoke-line" data-time="167"> S'moga kau kan tetap jadi apa yang ku inginkan</div>
-      <div class="karaoke-line" data-time="174">  jangan pernah berubah</div>
-      <div class="karaoke-line" data-time="178"> ingat janjimu</div>
+      <div class="karaoke-line" data-time="167">S'moga kau kan tetap jadi apa yang ku inginkan</div>
+      <div class="karaoke-line" data-time="174">jangan pernah berubah</div>
+      <div class="karaoke-line" data-time="178">ingat janjimu</div>
       <div class="karaoke-line" data-time="182">jangan pernah mengilang</div>
       <div class="karaoke-line" data-time="185">dari hatiku</div>
-      </div>
-    <p class="text-sm text-gray-500 mt-6">Di Saat duitku habis <code>,Di Situlah Rasa Semangat Ku</code> Hilang entah kemana😭😭</p>
-  </section>  <footer class="bg-gray-900 text-center py-6">
+    </div>
+    <p class="text-sm text-gray-500 mt-6">Di Saat duitku habis, <code>Di Situlah Rasa Semangat Ku</code> Hilang entah kemana</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-center py-6">
     <p class="text-gray-500">© 2025 Yanzdev. Semua Hak Dilindungi🪬.</p>
-  </footer>  <script>
+  </footer>
+
+  <!-- Script -->
+  <script>
     const githubUsername = "Yanzdevbot";
     async function loadRepos() {
       const res = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`);
@@ -109,7 +140,6 @@
 
     const audio = document.getElementById("audio");
     const lines = document.querySelectorAll(".karaoke-line");
-
     audio.addEventListener("timeupdate", () => {
       const currentTime = Math.floor(audio.currentTime);
       lines.forEach(line => {
@@ -120,5 +150,7 @@
         }
       });
     });
-  </script></body>
-        </html>
+  </script>
+
+</body>
+  </html>
