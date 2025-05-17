@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yanzdev | Web Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .karaoke-line {
+      display: none;
+      transition: all 0.3s ease;
+    }
+    .karaoke-line.active {
+      display: block;
+      color: #34d399;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <header class="bg-gray-800 p-4 fixed w-full z-10 top-0 shadow">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Yanzdev</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="hover:text-teal-400">Tentang</a>
+        <a href="#projects" class="hover:text-teal-400">Proyek</a>
+        <a href="#contact" class="hover:text-teal-400">Kontak</a>
+      </nav>
+    </div>
+  </header>  <section class="h-screen flex items-center justify-center pt-20" id="home">
+    <div class="text-center">
+      <img src="images/profile.jpg" alt="Foto Yanzdev" class="w-40 h-40 object-cover mx-auto rounded-full mb-4 border-4 border-teal-500">
+      <h2 class="text-4xl font-bold">Halo, Saya Yanzdev</h2>
+      <p class="text-gray-400 text-xl mt-2">Kamu Just Kidding, Aku Galau Cuman Akting🥶</p>
+    </div>
+  </section>  <section id="about" class="py-20 px-6 bg-gray-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Tentang Saya</h2>
+      <p class="text-gray-300">saya adalah seseorang sigam skibidi yang belajar html,css,dan saya juga sedikit bosen kaya gini mulu kalo punya saran hub lewat email aja wa gw modar</p>
+    </div>
+  </section>  <section id="projects" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Proyek GitHub</h2>
+      <div id="repo-list" class="grid md:grid-cols-3 gap-8">
+        <p class="text-gray-400">Loading repositori...</p>
+      </div>
+    </div>
+  </section>  <section id="contact" class="py-20 px-6 bg-gray-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Kontak</h2>
+      <p class="text-gray-300">Hubungi saya di:</p>
+      <a href="mailto:ihwanparabon@gmail.com" class="text-teal-400 underline">ihwanparabon@gmail.com</a>
+    </div>
+  </section>  <section id="music" class="py-12 px-6 text-center bg-gray-900">
+    <h2 class="text-2xl font-bold mb-4">Dengarkan Lagu</h2>
+    <audio id="audio" controls class="mx-auto">
+      <source src="music/sample.mp3" type="audio/mpeg">
+      Browser Anda tidak mendukung pemutar audio.
+    </audio>
+    <div id="karaoke" class="mt-6 text-center text-gray-300 space-y-2">
+      <div class="karaoke-line" data-time="0">Malam sunyi tanpa ciu</div>
+      <div class="karaoke-line" data-time="5">Kode berderet dalam rindu</div>
+      <div class="karaoke-line" data-time="10">Web kubangun satu per satu</div>
+      <div class="karaoke-line" data-time="15">Yanzdev hadir tak pernah jemu</div>
+    </div>
+    <p class="text-sm text-gray-500 mt-6">Ganti file di folder <code>music/sample.mp3</code> dan sesuaikan waktu lirik di script jika ingin menyesuaikan lagu lain.</p>
+  </section>  <footer class="bg-gray-900 text-center py-6">
+    <p class="text-gray-500">© 2025 Yanzdev. Semua Hak Dilindungi.</p>
+  </footer>  <script>
+    const githubUsername = "Yanzdevbot";
+    async function loadRepos() {
+      const res = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`);
+      const repos = await res.json();
+      const container = document.getElementById("repo-list");
+      container.innerHTML = "";
+      repos.slice(0, 3).forEach(repo => {
+        const el = document.createElement("div");
+        el.className = "bg-gray-800 p-6 rounded-lg shadow-lg";
+        el.innerHTML = `
+          <h3 class="text-xl font-semibold mb-2">${repo.name}</h3>
+          <p class="text-gray-400 mb-2">${repo.description || "Tidak ada deskripsi."}</p>
+          <a href="${repo.html_url}" target="_blank" class="text-teal-400 underline">Lihat di GitHub</a>
+        `;
+        container.appendChild(el);
+      });
+    }
+    loadRepos();
+
+    const audio = document.getElementById("audio");
+    const lines = document.querySelectorAll(".karaoke-line");
+
+    audio.addEventListener("timeupdate", () => {
+      const currentTime = Math.floor(audio.currentTime);
+      lines.forEach(line => {
+        const time = parseInt(line.getAttribute("data-time"));
+        if (time === currentTime) {
+          lines.forEach(l => l.classList.remove("active"));
+          line.classList.add("active");
+        }
+      });
+    });
+  </script></body>
+</html>
